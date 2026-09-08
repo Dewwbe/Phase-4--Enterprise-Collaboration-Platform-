@@ -1,0 +1,32 @@
+{
+  "name": "ecp-platform",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Enterprise Collaboration Platform - monorepo (Phase 4 Capstone)",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "lint": "turbo run lint",
+    "test": "turbo run test",
+    "test:cov": "turbo run test:cov",
+    "test:e2e": "turbo run test:e2e",
+    "format": "turbo run format",
+    "prisma:generate": "npm run prisma:generate -w apps/api",
+    "prisma:migrate": "npm run prisma:migrate -w apps/api",
+    "prisma:seed": "npm run prisma:seed -w apps/api",
+    "dev:api": "turbo run dev --filter=api",
+    "dev:web": "turbo run dev --filter=web"
+  },
+  "devDependencies": {
+    "turbo": "^2.1.3",
+    "typescript": "^5.5.4"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "packageManager": "npm@10.8.2"
+}
